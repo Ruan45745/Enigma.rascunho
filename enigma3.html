@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enigma 3</title>
+  <style>body{background-color:#111;color:#eee;font-family:Arial,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;text-align:center;padding:20px;margin:0}input,button{padding:10px;border-radius:5px;border:none;margin:10px}button{background-color:#444;color:#fff;cursor:pointer}button:hover{background-color:#666}#proximo{display:none}</style>
+</head>
+<body>
+  <h1>Enigma 3</h1>
+  <p>Uma hora é pequena, outra já é gente grande, sempre morre pela lâmina e volta num instante. Lembro-me de suas irmãs gêmeas e suas irmãs que são mais distantes.</p>
+  <input type="text" id="resposta" placeholder="Sua resposta...">
+  <button onclick="verificarResposta()">Enviar</button>
+  <div id="mensagem"></div>
+  <a id="proximo" href="enigma4.html"><button>Próximo Enigma</button></a>
+  <script>
+    function normalizar(txt){return txt.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").trim();}
+    function verificarResposta(){const resposta=normalizar(document.getElementById('resposta').value);if(resposta==='unha'){document.getElementById('mensagem').textContent='Correto!';document.getElementById('mensagem').style.color='green';document.getElementById('proximo').style.display='block';}else{document.getElementById('mensagem').textContent='Tente novamente.';document.getElementById('mensagem').style.color='red';}}
+  </script>
+</body>
+</html>
